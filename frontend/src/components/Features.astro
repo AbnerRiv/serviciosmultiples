@@ -1,0 +1,45 @@
+---
+interface Props {
+  featureArr: Array<string>;
+}
+
+const { featureArr } = Astro.props;
+---
+
+<section class="relative md:w-[45%] h-auto">
+  <div class="background-div backdrop-blur !h-80 md:!h-full"></div>
+
+  <ul class="absolute -translate-y-[110%] px-1 xl:px-2 xl:-translate-y-[130%] text-primary text-base md:text-lg lg:text-xl font-semibold">
+    {featureArr.map((item) => <li class="no_blur break-words">{item}</li>)}
+  </ul>
+</section>
+
+<style scoped>
+  .background-div {
+    width: 100%; /* Adjust the width as needed */
+    height: 100%; /* Adjust the height as needed */
+    background-image: url("../assets/images/furnitureBg.jpg"); /* Replace with your image URL */
+    background-size: cover; /* Ensures the image covers the entire div */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repeating the image */
+    filter: blur(1px);
+  }
+
+  .no_blur {
+    filter: blur(0) !important;
+  }
+
+  ul {
+    list-style: "> " inside !important;
+  }
+
+  li {
+    color: #086c32;
+    margin-bottom: 12px;
+    text-shadow:
+      -1px -1px 0 #fff,
+      1px -1px 0 #fff,
+      -1px 1px 0 #fff,
+      1px 1px 0 #fff;
+  }
+</style>

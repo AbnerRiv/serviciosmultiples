@@ -1,0 +1,10 @@
+---
+import FurniturePage from "../components/react/FurniturePage.tsx"
+import Layout from "../layouts/Layout.astro";
+import { PUBLIC_API_URL } from 'astro:env/client';
+---
+
+
+<Layout title="Productos">
+    <FurniturePage baseApiUrl={PUBLIC_API_URL} client:load/>
+</Layout>

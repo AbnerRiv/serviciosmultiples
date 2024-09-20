@@ -1,0 +1,57 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Banner from "@/components/Banner.astro";
+import Features from "@/components/Features.astro";
+import { Image } from "astro:assets";
+import conferenceTable from "@/assets/images/conferenceTable.jpg";
+import Testimonials from "@/components/react/Testimonials.tsx";
+import ContactUsForm from "@/components/ContactUsForm.astro";
+
+let featureArr = [
+  "Especialistas en la fabricación de muebles de oficina a medida",
+  "Garantía de hasta 36 meses en todo nuestro mobiliario",
+  "Mantenimiento preventivo y correctivo para tu mobiliario",
+  "Acabados profesionales, elegantes y adaptados a tu presupuesto",
+];
+
+let testimonialArr = [
+  {
+    name: "Lic. Nancy Molina",
+    text: "Trabajar con Servicios Múltiples como proveedor a simplificado la búsqueda ya que ellos  nos han brindado variedad de colores y estilo en sus productos, la mejor parte es que cuentan con personal calificado para diseñar y fabricar al gusto del cliente",
+    photo: "testimonial1.jpg",
+    position: "RR.HH. y Compras",
+    company: "Inauto de Nicaragua",
+  },
+];
+---
+
+<Layout title="Inicio">
+  <main class="w-full flex flex-col items-center">
+    <section class="w-full">
+      <Banner />
+      <section class="flex flex-col md:flex-row md:flex-nowrap mt-2 mb-3">
+        <Features featureArr={featureArr} />
+        <Image
+          src={conferenceTable}
+          class={"w-[100%] h-[500px] object-cover image-object-poistion"}
+          alt={"logo"}
+        />
+      </section>
+    </section>
+    <Testimonials
+      testimonials={testimonialArr}
+      title={"Testimonios"}
+      client:load
+    />
+    <ContactUsForm
+      title={"Contáctanos"}
+      targetEmail={"82c02d46456545b89bfcb278ee70d9a2"}
+    />
+  </main>
+
+  <style scoped>
+    .image-object-poistion {
+      object-position: 0 36%;
+    }
+  </style>
+</Layout>

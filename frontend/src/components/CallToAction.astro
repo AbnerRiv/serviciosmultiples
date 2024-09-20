@@ -1,0 +1,26 @@
+---
+interface Props {
+  body: string;
+  href?: string;
+  buttonText?: string;
+}
+
+const { buttonText = "", body } = Astro.props;
+---
+
+<section
+  class="absolute top-1/3 md:top-1/2 w-3/4 md:w-1/4 right-[1%] md:right-[10%] flex flex-col items-center gap-y-2"
+  id="first-section"
+>
+  <p class="break-words font-semibold merry lg:text-2xl text-brand">
+    {body}
+  </p>
+  <a
+    href="/files/catalogSm2024.pdf"
+    download="Catalogo Servicios Multiples.pdf"
+    target="_blank"
+    class="w-1/2 md:w-4/5 h-auto max-w-40 md:max-w-none p-0.5 xl:py-1.5 xl:px-2 rounded-md bg-primary text-brand text-center text-xs md:text-sm xl:text-base"
+  >
+    {buttonText}
+  </a>
+</section>

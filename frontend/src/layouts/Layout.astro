@@ -1,0 +1,78 @@
+---
+import "@fontsource/merriweather";
+import "@fontsource/poppins";
+import "@fontsource/source-code-pro";
+import NavBar from "@/components/NavBar.astro";
+import Footer from "@/components/Footer.astro";
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="w-full relative">
+    <NavBar />
+    <slot />
+    <Footer />
+  </body>
+</html>
+<style is:global>
+  html {
+    font-family: "Poppins", sans-serif;
+    background: #fbfafb;
+    letter-spacing: -0.025rem;
+  }
+
+  .merry {
+    font-family: "Merriweather", sans-serif !important;
+  }
+
+  .source-code-pro {
+    font-family: "Source Code Pro", monospace !important;
+  }
+
+  body,
+  figure {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin: 0;
+    color: ##9a9da5;
+  }
+
+  p {
+    color: ##9a9da5;
+  }
+</style>

@@ -1,0 +1,8 @@
+.pagination-symbol-shadow {
+    color: #00ad3b;
+    text-shadow:
+      -1px -1px 0 #2b2b2c,
+      1px -1px 0 #2b2b2c,
+      -1px 1px 0 #2b2b2c,
+      1px 1px 0 #2b2b2c;
+  }

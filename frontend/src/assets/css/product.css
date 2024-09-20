@@ -1,0 +1,82 @@
+.custom-checkbox-container{
+    .container {
+      display: block;
+      position: relative;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+  
+    /* Hide the browser's default checkbox */
+    .container input {
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+  
+    /* Create a custom checkbox */
+    .checkmark {
+      position: absolute;
+      top: 2px;
+      left: 15%;
+      height: 15px;
+      width: 15px;
+      border-radius: 3px;
+      border: 1px solid #0FD862
+    }
+  
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+  
+    /* Show the checkmark when checked */
+    .container input:checked ~ .checkmark:after {
+      display: block;
+    }
+  
+    /* Style the checkmark/indicator */
+    .container .checkmark:after {
+      left: 30%;
+      top: 1px;
+      width: 5px;
+      height: 10px;
+      border: solid #0EC359;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+}
+
+input[type=number].edit-input-number::-webkit-inner-spin-button,
+input[type=number].edit-input-number::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Firefox */
+input[type=number].edit-input-number::-moz-number-spinners {
+  -moz-appearance: none;
+}
+
+input.edit-input-number:focus {
+  outline: none !important;
+  border:2.5px solid #0FD862;
+  box-shadow: 0 0 10px #719ECE;
+}
+
+input.search-bar:focus{
+  outline: none !important;
+  border:2.5px solid #0FD862;
+  box-shadow: 0 0 10px #b9cadd;
+}
+
+section.filters{
+  border-right: 2px solid #0FD862;
+}

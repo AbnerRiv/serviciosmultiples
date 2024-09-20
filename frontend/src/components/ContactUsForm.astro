@@ -1,0 +1,64 @@
+---
+interface Props {
+  title: string;
+  targetEmail: string;
+}
+
+const { title, targetEmail } = Astro.props;
+let formAction = `https://formsubmit.co/${targetEmail}`;
+---
+
+<section
+  class="container w-full md:w-[70%] bg-background-accent rounded flex flex-col items-center py-3 mb-6"
+  id="contactUsForm"
+>
+  <h1 class="text-2xl font-semibold text-brand-secondary">{title}</h1>
+  <form
+    target="_blank"
+    action={formAction}
+    method="POST"
+    class="flex flex-col gap-y-5 text-lg w-11/12 md:w-[60%]"
+  >
+    <div class="flex flex-col lg:flex-row justify-between">
+      <label class="flex flex-col" for="fullName">
+        Nombre Completo
+        <input
+          id="fullName"
+          type="text"
+          name="name"
+          class="form-control"
+          placeholder="E.g. John Doe"
+          required
+        />
+      </label>
+      <label class="flex flex-col" for="email">
+        Email
+        <input
+          id="email"
+          type="email"
+          name="email"
+          class="form-control"
+          placeholder="johndoe@gmail.com"
+          required
+        />
+      </label>
+    </div>
+    <div>
+      <label class="flex flex-col" for="message">
+        Mensaje
+        <textarea
+          id="message"
+          placeholder="Su Mensaje"
+          class="resize-none w-full"
+          name="message"
+          rows="10"
+          required></textarea>
+      </label>
+      <button
+        type="submit"
+        class="bg-brand-secondary text-background rounded-sm mt-3 p-1"
+        >Enviar Correo</button
+      >
+    </div>
+  </form>
+</section>
